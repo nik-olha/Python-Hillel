@@ -26,4 +26,3 @@ class Like(CommonInfo):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, null=True,
                              blank=False, on_delete=models.CASCADE)
     status = models.BooleanField(null=True, blank=True)
-    
