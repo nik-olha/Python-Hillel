@@ -1,0 +1,31 @@
+User:
+    id: int
+    user_name: varchar
+    email: varchar
+    password: varchar
+    first_name:varchar
+    last_name:varchar
+    phone: int
+
+    created_ad:
+    updated_ud:
+
+Post:
+    id: int
+    title: varchar
+    content: text
+    image: varchar
+    user_id: int
+
+    created_ad:
+    updated_ud:
+
+Likes:
+    id: int
+    user_id: int
+    user_id: int
+    status: bool = null
+
+    created_ad:
+    updated_ud:
+    
