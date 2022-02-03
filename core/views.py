@@ -1,5 +1,4 @@
-from .models import Post, Like
-from django.db.models import query
+from .models import Post
 from django.views.generic import ListView, DetailView, DeleteView
 
 
@@ -28,7 +27,6 @@ class PostDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        posts = Post.objects.all()
         post = self.object
 
         context['likes'] = post.like_set.filter(status=True).count()
