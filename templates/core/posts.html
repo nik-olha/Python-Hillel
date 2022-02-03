@@ -3,10 +3,10 @@
 
 <sector id="blog" class="blog">
     <h1>Welcome to the posts</h1>
-    {% for post in object_list %}
+    {% for post, likes, dislikes in results %}
     <div class='blog__item'>
         <div class="blog__item__text">
-            <h4>{{post.title}}</h4><br>
+            <h4>{{post.title}} | {{likes}} | {{dislikes}}</h4><br>
             <p>{{ post.content|linebreaksbr }}</p>
             <button class="btn"> Detaild info (coming soon...)</button>
         </div>
