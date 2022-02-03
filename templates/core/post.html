@@ -10,8 +10,12 @@
     <p>{{ object.content|linebreaksbr }}</p>
     <h5>{{likes}} people like this post</h5>
     <h5>{{dislikes}} people dislike this post</h5>
-    <p>{{ object.user }}</p>
-    
- 
+    <p class="author"> Created by {{ object.user | title }}</p>
+
+    <form method="post">{% csrf_token %}
+        <input class="btn-1" type="submit" value=" Delete this post">
+    </form>
+
+
 </article>
 {% endblock %}
