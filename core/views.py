@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+# from django.http import HttpResponse
 from .models import Post
 from django.views.generic import ListView
 
