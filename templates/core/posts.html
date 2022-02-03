@@ -6,9 +6,11 @@
     {% for post, likes, dislikes in results %}
     <div class='blog__item'>
         <div class="blog__item__text">
-            <h4>{{post.title}} | {{likes}} | {{dislikes}}</h4><br>
-            <p>{{ post.content|linebreaksbr }}</p>
-            <button class="btn"> Detaild info (coming soon...)</button>
+            <h3>{{post.title}}</h3><br>
+            <p>{{ post.content|linebreaksbr }}</p><br>
+            <h5>{{likes}} people like this post</h5>
+            <h5>{{dislikes}} people dislike this post</h5>
+            <button class="btn"> <h2><a href="{% url 'post_detail' pk=post.pk %}">Detaild info</a></h2></button>
         </div>
     </div>
     {% endfor %}
