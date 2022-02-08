@@ -1,0 +1,8 @@
+update page
+
+<h1>{{object}}</h1>
+
+<form method="post">{% csrf_token %}
+    {{form}}
+    <input class="btn-1" type="submit" value="Submit">
+</form>

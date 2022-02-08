@@ -3,6 +3,7 @@
 
 <sector id="blog" class="blog">
     <h1>Welcome to the posts</h1>
+    <a href="{% url 'posts:create' %}">Create a new post</a>
     {% for post, likes, dislikes in results %}
     <div class='blog__item'>
         <div class="blog__item__text">
@@ -10,7 +11,7 @@
             <p>{{ post.content|linebreaksbr }}</p><br>
             <h5>{{likes}} people like this post</h5>
             <h5>{{dislikes}} people dislike this post</h5>
-            <button class="btn"> <h2><a href="{% url 'post_detail' pk=post.pk %}">Detaild info</a></h2></button>
+            <button class="btn"> <h2><a href="{% url 'posts:detail' pk=post.pk %}">Detaild info</a></h2></button>
         </div>
     </div>
     {% endfor %}
