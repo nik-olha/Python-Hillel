@@ -1,8 +1,15 @@
-update page
+{% extends 'core/base.html' %}
+{% block content %}
 
-<h1>{{object}}</h1>
+<h1>Update page</h1>
 
-<form method="post">{% csrf_token %}
-    {{form}}
-    <input class="btn-1" type="submit" value="Submit">
-</form>
+<h3>{{object}}</h3>
+
+<div class="container">
+    <form method="post">{% csrf_token %}
+        {{form}}
+        <input class="btn-1" type="submit" value="Submit">
+    </form>
+</div>
+
+{% endblock %}

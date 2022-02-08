@@ -12,9 +12,9 @@
     <h5>{{dislikes}} people dislike this post</h5>
     <p class="author"> Created by {{ object.user | title }}</p>
 
-    <a href="{% url 'posts:delete' pk=object.pk %}"> delete</a>
-    <a href="{% url 'posts:update' pk=object.pk %}"> update</a>
-
+    <a class="btn" href="{% url 'posts:delete' pk=object.pk %}"> delete</a>
+    <a class="btn" href="{% url 'posts:update' pk=object.pk %}"> update</a>
 
 </article>
+
 {% endblock %}
