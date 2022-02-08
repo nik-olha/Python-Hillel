@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<h1>{{object}}</h1>
+
+<article class="post">
+    <p> Post created: {{ object.created_at}}</p>
+    <p> Last updates: {{ object.update_at}}</p><br>
+
+    <p>{{ object.content|linebreaksbr }}</p>
+    <h5>{{likes}} people like this post</h5>
+    <h5>{{dislikes}} people dislike this post</h5>
+    <p class="author"> Created by {{ object.user | title }}</p>
+
+    <form method="post">{% csrf_token %}
+        <input class="btn-1" type="submit" value=" Delete this post">
+    </form>
+
+
+</article>
+{% endblock %}

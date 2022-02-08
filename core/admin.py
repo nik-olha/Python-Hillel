@@ -9,7 +9,7 @@ class LikeTabularInline(admin.TabularInline):
 class PostAdmin(admin.ModelAdmin):
     inlines = [LikeTabularInline]
     model = Post
-    list_display = ('user', 'title', 'content', 'image', 'created_ad', 'update_ad')
+    list_display = ('user', 'title', 'content', 'image', 'created_at', 'update_at')
 
 
 admin.site.register(Post, PostAdmin)
