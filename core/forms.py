@@ -9,7 +9,10 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ["title", "content"]
 
-    def clean(self):
-        data = super().clean()  
-        data['user'] = User.objects.first()
-        return data    
+    def save(self, commit = True): 
+        post = super().save(commit = False)
+        # setattr(post, 'user', User.objects.first())
+        post.user = User.objects.first()
+        if commit:
+            post.save()
+        return post
