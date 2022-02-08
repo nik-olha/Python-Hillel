@@ -14,14 +14,31 @@
 │   ├── urls.py
 │   └── wsgi.py
 ├── core
-|   └── migrations
+|   ├── migrations
 |   |   └── __init__.py
 |   ├── __init__.py
 |   ├── admin.py
 │   ├── apps.py
 │   ├── models.py
 │   ├── tests.py
-│   └── views.py  
+│   └── views.py
+├── static
+│  └── css
+│        └── style.css
+├── templates 
+│   ├── core
+│   │    ├── base.html
+│   │    └── posts.html
+│   └── users
+├── users
+|   ├── migrations
+|   |   └── __init__.py
+|   ├── __init__.py
+|   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
 ├── db.sqlite3
 ├── manage.py
 ├── Pipfile
@@ -78,6 +95,29 @@ Within `core` directiry are and six files and `migrates` directory within `__ini
 - `models.py` is where the models for the app are located.
 - `tests.py` contains test procedures.
 - `views.py` is where the views for the app are located.
+
+\
+`Static` derictory stores static files such as styles
+
+```bash
+├── static
+│  └── css
+│        └── style.css
+```
+
+\
+`Templates` derictory stores `html` templates for all apps
+
+```bash
+├── templates 
+│   ├── core
+│   │    ├── base.html
+│   │    └── posts.html
+│   └── users
+```
+
+\
+`Users` derictory repeats the structure of `core`.
 
 \
 **_Database_** is located in:
