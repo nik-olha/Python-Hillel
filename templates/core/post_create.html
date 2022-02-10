@@ -1,0 +1,11 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<h1>Please, share your ideas in this new post</h1>
+
+<form method="post">{% csrf_token %}
+    {{form}}
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

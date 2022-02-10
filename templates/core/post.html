@@ -12,10 +12,9 @@
     <h5>{{dislikes}} people dislike this post</h5>
     <p class="author"> Created by {{ object.user | title }}</p>
 
-    <form method="post">{% csrf_token %}
-        <input class="btn-1" type="submit" value=" Delete this post">
-    </form>
-
+    <a class="btn" href="{% url 'posts:delete' pk=object.pk %}"> delete</a>
+    <a class="btn" href="{% url 'posts:update' pk=object.pk %}"> update</a>
 
 </article>
+
 {% endblock %}

@@ -1,5 +1,7 @@
 from .models import Post
-from django.views.generic import ListView, DetailView, DeleteView
+from django.views.generic import ListView, DetailView, DeleteView, UpdateView, CreateView
+from django.urls import reverse_lazy
+from .forms import PostForm
 
 
 class PostView(ListView):
@@ -35,13 +37,22 @@ class PostDetailView(DetailView):
 
 
 class PostDeleteView(DeleteView):
+    queryset = Post.objects.all()
+    template_name = 'core/post_delete.html'
     model = Post
-    success_url = "/"
+    success_url = reverse_lazy("posts:list")
 
 
-class PostUpdateView():
-    pass
+class PostUpdateView(UpdateView):
+    queryset = Post.objects.all()
+    template_name = 'core/post_update.html'
+    fields = ["title", "content"]
+    success_url = reverse_lazy("posts:list")
 
 
-class PostCreateView():
-    pass
+class PostCreateView(CreateView):
+    queryset = Post.objects.all()
+    template_name = 'core/post_create.html'
+    # fields = ["title", "content", "user"]
+    success_url = reverse_lazy("posts:list")
+    form_class = PostForm

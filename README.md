@@ -19,8 +19,10 @@
 |   ├── __init__.py
 |   ├── admin.py
 │   ├── apps.py
+│   ├── forms.py
 │   ├── models.py
 │   ├── tests.py
+│   ├── urls.py
 │   └── views.py
 ├── static
 │  └── css
@@ -28,6 +30,9 @@
 ├── templates 
 │   ├── core
 │   │    ├── base.html
+│   │    ├── post_create.html
+│   │    ├── post_delete.html
+│   │    ├── post_update.html
 │   │    └── posts.html
 │   └── users
 ├── users
@@ -78,22 +83,26 @@ Within `core` directiry are and six files and `migrates` directory within `__ini
 
 ```bash
 ├── core
-|   └── migrations
+|   ├── migrations
 |   |   └── __init__.py
 |   ├── __init__.py
 |   ├── admin.py
 │   ├── apps.py
+│   ├── forms.py
 │   ├── models.py
 │   ├── tests.py
-│   └── views.py 
+│   ├── urls.py
+│   └── views.py
 ```
 
 - `migrations` folder is where Django stores migrations, or changes to the database.
 - `__init__.py` indicates that the files in the folder are part of a Python package.
 - `admin.py` file is used to display  models in the Django admin panel.
 - `apps.py` is a configuration file.
+- `forms.py` contains custom forms.
 - `models.py` is where the models for the app are located.
 - `tests.py` contains test procedures.
+- `urls.py` contains urls used in current django-app.
 - `views.py` is where the views for the app are located.
 
 \
@@ -112,6 +121,9 @@ Within `core` directiry are and six files and `migrates` directory within `__ini
 ├── templates 
 │   ├── core
 │   │    ├── base.html
+│   │    ├── post_create.html
+│   │    ├── post_delete.html
+│   │    ├── post_update.html
 │   │    └── posts.html
 │   └── users
 ```
