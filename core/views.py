@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from .forms import PostForm
 # from .forms import SignUpForm
 from django.contrib.auth import get_user_model
+from django.http import HttpResponseRedirect
 
 User = get_user_model()
 
@@ -46,12 +47,22 @@ class PostDeleteView(DeleteView):
     model = Post
     success_url = reverse_lazy("posts:list")
 
+    def get(self, request, *args, **kwargs):
+        if self.get_object().user != request.user:
+            return HttpResponseRedirect("/posts/")
+        return super().get(request, *args, **kwargs)
+
 
 class PostUpdateView(UpdateView):
     queryset = Post.objects.all()
     template_name = 'core/post_update.html'
     fields = ["title", "content"]
     success_url = reverse_lazy("posts:list")
+
+    def get(self, request, *args, **kwargs):
+        if self.get_object().user != request.user:
+            return HttpResponseRedirect("/posts/")
+        return super().get(request, *args, **kwargs)
 
 
 class PostCreateView(CreateView):
