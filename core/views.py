@@ -2,7 +2,6 @@ from .models import Post
 from django.views.generic import ListView, DetailView, DeleteView, UpdateView, CreateView
 from django.urls import reverse_lazy
 from .forms import PostForm
-# from .forms import SignUpForm
 from django.contrib.auth import get_user_model
 from django.http import HttpResponseRedirect
 
@@ -68,17 +67,9 @@ class PostUpdateView(UpdateView):
 class PostCreateView(CreateView):
     queryset = Post.objects.all()
     template_name = 'core/post_create.html'
-    # fields = ["title", "content", "user"]
     success_url = reverse_lazy("posts:list")
     form_class = PostForm
 
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
-
-
-# class UserSignUpView(CreateView):
-#     queryset = User.objects.all()
-#     template_name = 'auth/signup.html'
-#     success_url = reverse_lazy("posts:list")
-#     form_class = SignUpForm
