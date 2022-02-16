@@ -2,7 +2,6 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
 from django.http import HttpResponse
 from django.views.generic.edit import CreateView
-from django.contrib.auth.forms import UserCreationForm
 from .forms import UserSignUpForm
 
 
