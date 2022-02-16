@@ -4,10 +4,11 @@
 {% endblock %}
 
 {% block anon_content%}
-<h1>Sing up</h1>
+<h1>Sign up</h1>
 <form action="" method="post">
     {% csrf_token %}
     {{form.as_p}}
-    <button type="submit">Sing up</button>
+    {{profile_form.as_p}}
+    <button type="submit">Sign up</button>
 </form>
 {% endblock anon_content%}

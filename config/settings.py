@@ -95,3 +95,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = reverse_lazy("posts:list")
 
 # LOGIN_REDIRECT_URL = reverse_lazy("login")
+AUTH_USER_MODEL = 'users.User'
