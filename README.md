@@ -34,6 +34,9 @@
 │   │    ├── post_delete.html
 │   │    ├── post_update.html
 │   │    └── posts.html
+│   ├── registration
+│   │    ├── login.html
+│   │    └── signup.html
 │   └── users
 ├── users
 |   ├── migrations
@@ -41,6 +44,7 @@
 |   ├── __init__.py
 |   ├── admin.py
 │   ├── apps.py
+|   ├── forms.py
 │   ├── models.py
 │   ├── tests.py
 │   └── views.py
@@ -125,6 +129,9 @@ Within `core` directiry are and six files and `migrates` directory within `__ini
 │   │    ├── post_delete.html
 │   │    ├── post_update.html
 │   │    └── posts.html
+│   ├── registration
+│   │    ├── login.html
+│   │    └── signup.html
 │   └── users
 ```
 
