@@ -19,8 +19,19 @@
         </div>
     </header>
     <main class="container">
+
+{% if user.is_authenticated %}
+Hello {{user.username}}
+    <br>
+    <a href="{% url 'logout' %}">Logout</a>
+
         {% block content %}
         {% endblock %}
+        {%else%}
+<h2>Please Login</h2> 
+{% block anon_content %}
+{% endblock anon_content%}
+{% endif%}
     </main>
     <footer>
         <div class="footer">
